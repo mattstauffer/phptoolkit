@@ -14,9 +14,7 @@ class PLVatidTest extends \PHPUnit_Framework_TestCase
      */
     public function testIsValid($expected, $vatid, $message)
     {
-        $validator = new PLVatid($vatid);
-
-        $this->assertEquals($expected, $validator->isValid(), $message);
+        $this->assertEquals($expected, ptkIsValidPlVatid($vatid), $message);
     }
 
     public function providerPLVatid()

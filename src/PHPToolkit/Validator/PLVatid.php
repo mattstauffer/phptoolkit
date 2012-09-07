@@ -1,45 +1,27 @@
 <?php
 
-namespace PHPToolkit\Validator;
-
 /**
+  * PHPToolkit Polish VATID validator
+  *
   * @author Tomasz Sobczak <tomeksobczak@gmail.com>
   **/
-class PLVatid
+function ptkIsValidPlVatid($vatid)
 {
-    const MODULO_DIVISOR     = 11;
-    const VATID_VALID_LENGTH = 10;
+    $MODULO_DIVISOR = 11;
+    $VALID_LENGTH   = 10;
+    $WEIGHTS        = array(6, 5, 7, 2, 3, 4, 5, 6, 7);
 
-    private $vatid = null;
+    $digits = array_filter(preg_split('//', $vatid, -1, PREG_SPLIT_NO_EMPTY), 'is_numeric');
+    $length = count($digits);
+    $sum    = 0;
 
-    public function __construct($vatid)
-    {
-        $this->vatid = $vatid;
+    if ($VALID_LENGTH != $length) {
+        return false;
     }
 
-    public function isValid($vatid = null)
-    {
-        if (is_null($vatid)) {
-            $vatid = $this->vatid;
-        }
-
-        $digits = array_filter(preg_split('//', $vatid, -1, PREG_SPLIT_NO_EMPTY), 'is_numeric');
-        $length = count($digits);
-        $sum    = 0;
-
-        if (self::VATID_VALID_LENGTH != $length) {
-            return false;
-        }
-
-        foreach ($this->weights() as $weight) {
-            $sum += $weight * array_shift($digits);
-        }
-
-        return (($sum % self::MODULO_DIVISOR) == array_shift($digits));
-    }    
-
-    private function weights()
-    {
-        return array(6, 5, 7, 2, 3, 4, 5, 6, 7);
+    foreach ($WEIGHTS as $weight) {
+        $sum += $weight * array_shift($digits);
     }
+
+    return (($sum % $MODULO_DIVISOR) == array_shift($digits));
 }
