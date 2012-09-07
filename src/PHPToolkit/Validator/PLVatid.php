@@ -2,6 +2,9 @@
 
 namespace PHPToolkit\Validator;
 
+/**
+  * @author Tomasz Sobczak <tomeksobczak@gmail.com>
+  **/
 class PLVatid
 {
     const MODULO_DIVISOR     = 11;
