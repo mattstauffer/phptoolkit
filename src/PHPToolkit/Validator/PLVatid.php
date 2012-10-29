@@ -1,5 +1,7 @@
 <?php
 
+namespace PHPToolkit\Validator;
+
 /**
   * PHPToolkit Polish VATID validator
   *
