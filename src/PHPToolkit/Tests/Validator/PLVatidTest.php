@@ -1,9 +1,5 @@
 <?php
 
-namespace PHPToolkit\Tests\Validator;
-
-use PHPToolkit\Validator as PtkValidator;
-
 require_once __DIR__ . '/../../Validator/PLVatid.php';
 
 /**
@@ -16,7 +12,7 @@ class PLVatidTest extends \PHPUnit_Framework_TestCase
      */
     public function testIsValid($expected, $vatid, $message)
     {
-        $this->assertEquals($expected, PtkValidator\ptkIsValidPlVatid($vatid), $message);
+        $this->assertEquals($expected, ptkIsValidPlVatid($vatid), $message);
     }
 
     public function providerPLVatid()
