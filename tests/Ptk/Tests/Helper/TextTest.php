@@ -20,6 +20,22 @@ class TextTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, Text::glueOrphans($text, $suffix), $message);
     }
 
+    /**
+     * @dataProvider providerRandom
+     */
+    public function testRandom($expected, $length, $easy_chars, $message)
+    {
+        $this->assertRegExp($expected, Text::random($length, $easy_chars), $message);
+    }
+
+    /**
+     * @dataProvider providerTruncate
+     */
+    public function testTruncate($expected, $text, $limit, $full_words, $trailing, $message)
+    {
+        $this->assertEquals($expected, Text::truncate($text, $limit, $full_words, $trailing), $message);
+    }
+
     public function providerGlueOrphans()
     {
         $out = array();
@@ -41,6 +57,29 @@ class TextTest extends \PHPUnit_Framework_TestCase
             $out[] = array("Testing double {$letter}{$letter} character", "Testing double {$letter}{$letter} character", 'SUFFIX', 'Testing single character to skip suffix');
         }
 
+        return $out;
+    }
+
+    public function providerRandom()
+    {
+        $tmp = array(rand(1, 100), rand(1, 100));
+        $out = array(
+            array('/^[2345679ACDEFGHJKMNPRSTUVWXYZ]{' . $tmp[0] . '}$/', $tmp[0], true, 'Testing randomstring with easy chars'),
+            array('/^[AbCdEfGhIjKlMnOpQrStUvWxYz0123456789aBcDeFgHiJkLmNoPqRsTuVwXyZ]{' . $tmp[1] . '}$/', $tmp[1], true, 'Testing randomstring with hard chars'),
+        );
+    
+        return $out;
+    }
+
+    public function providerTruncate()
+    {
+        $out = array(
+            array('Testing...', 'Testing simple truncate with full words', 10, true, '...', 'Testing simple truncate with full words'),
+            array('Testing si...', 'Testing simple truncate with truncated words', 10, false, '...', 'Testing simple truncate with truncated words'),
+            array('Testing[more]', 'Testing simple truncate with custom suffix', 10, true, '[more]', 'Testing simple truncate with custom suffix'),
+            array('Testing UTF truncate ąćęłńóżź...', 'Testing UTF truncate ąćęłńóżź and thats end', 30, true, '...', 'Testing UTF truncate ąćęłńóżź and thats end')
+        );
+    
         return $out;
     }
 }
