@@ -2,9 +2,8 @@
 
 require_once __DIR__ . '/../../Validator/PLVatid.php';
 
-/**
-  * @author Tomasz Sobczak <tomeksobczak@gmail.com>
-  **/
+use Ptk\Validator\PLVatid as PLVatid;
+
 class PLVatidTest extends \PHPUnit_Framework_TestCase
 {
     /**
@@ -12,7 +11,7 @@ class PLVatidTest extends \PHPUnit_Framework_TestCase
      */
     public function testIsValid($expected, $vatid, $message)
     {
-        $this->assertEquals($expected, ptkIsValidPlVatid($vatid), $message);
+        $this->assertEquals($expected, PLVatid::isValid($vatid), $message);
     }
 
     public function providerPLVatid()

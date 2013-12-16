@@ -2,28 +2,27 @@
 
 require_once __DIR__ . '/../../Helper/Text.php';
 
-/**
-  * @author Tomasz Sobczak <tomeksobczak@gmail.com>
-  **/
+use Ptk\Helper\Text as Text;
+
 class TextTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @dataProvider providerPtkTextOrphans
+     * @dataProvider providerGlueOrphans
      */
-    public function testPtkTextOrphans($expected, $text, $message)
+    public function testGlueOrphans($expected, $text, $message)
     {
-        $this->assertEquals($expected, ptkTextOrphans($text), $message);
+        $this->assertEquals($expected, Text::glueOrphans($text), $message);
     }
 
     /**
-     * @dataProvider providerPtkTextOrphansWithCustomSuffix
+     * @dataProvider providerGlueOrphansWithCustomSuffix
      */
-    public function testPtkTextOrphansWithCustomSuffix($expected, $text, $suffix, $message)
+    public function testGlueOrphansWithCustomSuffix($expected, $text, $suffix, $message)
     {
-        $this->assertEquals($expected, ptkTextOrphans($text, $suffix), $message);
+        $this->assertEquals($expected, Text::glueOrphans($text, $suffix), $message);
     }
 
-    public function providerPtkTextOrphans()
+    public function providerGlueOrphans()
     {
         $out = array();
 
@@ -35,7 +34,7 @@ class TextTest extends \PHPUnit_Framework_TestCase
         return $out;
     }
 
-    public function providerPtkTextOrphansWithCustomSuffix()
+    public function providerGlueOrphansWithCustomSuffix()
     {
         $out = array();
 
