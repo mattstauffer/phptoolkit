@@ -1,7 +1,5 @@
 <?php
 
-require_once __DIR__ . '/../../Helper/Text.php';
-
 use Ptk\Helper\Text as Text;
 
 class TextTest extends \PHPUnit_Framework_TestCase
