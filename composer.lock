@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "93a069831fc6b7301c2c3f404f284e41",
+    "hash": "78a6eaa7e8cc275dc6ccf9e63f837821",
     "packages": [
 
     ],
@@ -14,12 +14,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "4bacffdd738e89a094fb352f0e26a414f67122b6"
+                "reference": "832f43552c32e6754d53c2b02439f72afd921780"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/4bacffdd738e89a094fb352f0e26a414f67122b6",
-                "reference": "4bacffdd738e89a094fb352f0e26a414f67122b6",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/832f43552c32e6754d53c2b02439f72afd921780",
+                "reference": "832f43552c32e6754d53c2b02439f72afd921780",
                 "shasum": ""
             },
             "require": {
@@ -31,7 +31,7 @@
             },
             "require-dev": {
                 "ext-xdebug": ">=2.2.1",
-                "phpunit/phpunit": "dev-master"
+                "phpunit/phpunit": "3.9.*@dev"
             },
             "suggest": {
                 "ext-dom": "*",
@@ -40,12 +40,12 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3.x-dev"
+                    "dev-master": "1.4.x-dev"
                 }
             },
             "autoload": {
                 "classmap": [
-                    "PHP/"
+                    "src/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -69,7 +69,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-12-01 21:49:24"
+            "time": "2014-01-27 11:57:50"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -260,12 +260,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "5fb30aa953ef877d1ebd28f784bc7578426b250f"
+                "reference": "139fc9346de6f4fd5c6641558fd9bac708ad4359"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/5fb30aa953ef877d1ebd28f784bc7578426b250f",
-                "reference": "5fb30aa953ef877d1ebd28f784bc7578426b250f",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/139fc9346de6f4fd5c6641558fd9bac708ad4359",
+                "reference": "139fc9346de6f4fd5c6641558fd9bac708ad4359",
                 "shasum": ""
             },
             "require": {
@@ -274,18 +274,15 @@
                 "ext-reflection": "*",
                 "ext-spl": "*",
                 "php": ">=5.4.7",
-                "phpunit/php-code-coverage": "1.3.*@dev",
+                "phpunit/php-code-coverage": "1.4.*@dev",
                 "phpunit/php-file-iterator": ">=1.3.1",
                 "phpunit/php-text-template": ">=1.1.1",
                 "phpunit/php-timer": ">=1.0.2",
-                "phpunit/phpunit-mock-objects": "1.3.*@dev",
+                "phpunit/phpunit-mock-objects": "1.4.*@dev",
                 "sebastian/diff": ">=1.1.0",
                 "sebastian/exporter": ">=1.0.0",
                 "sebastian/version": ">=1.0.0",
                 "symfony/yaml": "~2.0"
-            },
-            "require-dev": {
-                "pear-pear/pear": "1.9.4"
             },
             "suggest": {
                 "ext-json": "*",
@@ -294,17 +291,17 @@
                 "phpunit/php-invoker": ">=1.1.0"
             },
             "bin": [
-                "composer/bin/phpunit"
+                "phpunit"
             ],
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.8.x-dev"
+                    "dev-master": "3.9.x-dev"
                 }
             },
             "autoload": {
                 "classmap": [
-                    "PHPUnit/"
+                    "src/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -329,7 +326,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-12-14 11:59:31"
+            "time": "2014-01-28 18:08:01"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -337,12 +334,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "a1a2f93ebf2677ca2bf292a925095f457cd960a5"
+                "reference": "43f78dd517e553e07664ef3190930eabde163c39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/a1a2f93ebf2677ca2bf292a925095f457cd960a5",
-                "reference": "a1a2f93ebf2677ca2bf292a925095f457cd960a5",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/43f78dd517e553e07664ef3190930eabde163c39",
+                "reference": "43f78dd517e553e07664ef3190930eabde163c39",
                 "shasum": ""
             },
             "require": {
@@ -350,8 +347,7 @@
                 "phpunit/php-text-template": ">=1.1.1"
             },
             "require-dev": {
-                "pear-pear/pear": "1.9.4",
-                "phpunit/phpunit": "dev-master"
+                "phpunit/phpunit": "3.9.*@dev"
             },
             "suggest": {
                 "ext-soap": "*"
@@ -359,12 +355,12 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3.x-dev"
+                    "dev-master": "1.4.x-dev"
                 }
             },
             "autoload": {
                 "classmap": [
-                    "PHPUnit/"
+                    "src/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -387,7 +383,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2013-12-12 22:23:57"
+            "time": "2014-01-27 11:07:09"
         },
         {
             "name": "sebastian/diff",
@@ -445,16 +441,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/exporter.git",
-                "reference": "1ea51dd3c4c86d5d2d0fdbfd779a277c4c6aadc2"
+                "reference": "5f53aea6f9c5ed5b85729f706a8a013b8806cc7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/1ea51dd3c4c86d5d2d0fdbfd779a277c4c6aadc2",
-                "reference": "1ea51dd3c4c86d5d2d0fdbfd779a277c4c6aadc2",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/5f53aea6f9c5ed5b85729f706a8a013b8806cc7b",
+                "reference": "5f53aea6f9c5ed5b85729f706a8a013b8806cc7b",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.8.*@dev"
             },
             "type": "library",
             "extra": {
@@ -500,7 +499,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2013-11-06 09:43:40"
+            "time": "2014-01-29 17:56:09"
         },
         {
             "name": "sebastian/version",
@@ -544,12 +543,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "1481f096caead542c2dfadd67d9fd6124d97e273"
+                "reference": "9921872611710df49cf035c259e5a461ea2d0f8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/1481f096caead542c2dfadd67d9fd6124d97e273",
-                "reference": "1481f096caead542c2dfadd67d9fd6124d97e273",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/9921872611710df49cf035c259e5a461ea2d0f8c",
+                "reference": "9921872611710df49cf035c259e5a461ea2d0f8c",
                 "shasum": ""
             },
             "require": {
@@ -582,7 +581,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2013-11-26 16:42:52"
+            "time": "2014-01-07 13:29:57"
         }
     ],
     "aliases": [

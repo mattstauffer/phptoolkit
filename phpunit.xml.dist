@@ -13,7 +13,7 @@
 >
     <testsuites>
         <testsuite name="PHPToolkit Test Suite">
-            <directory>./tests/Ptk/</directory>
+            <directory>./tests/Tsbc/Ptk/</directory>
         </testsuite>
     </testsuites>
     <filter>

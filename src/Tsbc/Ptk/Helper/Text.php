@@ -1,6 +1,6 @@
 <?php
 
-namespace Ptk\Helper;
+namespace Tsbc\Ptk\Helper;
 
 class Text
 {

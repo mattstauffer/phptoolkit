@@ -1,6 +1,6 @@
 <?php
 
-use Ptk\Validator\PLVatid as PLVatid;
+use Tsbc\Ptk\Validator\PLVatid as PLVatid;
 
 class PLVatidTest extends \PHPUnit_Framework_TestCase
 {

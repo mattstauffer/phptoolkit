@@ -1,6 +1,6 @@
 <?php
 
-namespace Ptk\Validator;
+namespace Tsbc\Ptk\Validator;
 
 class PLVatid
 {

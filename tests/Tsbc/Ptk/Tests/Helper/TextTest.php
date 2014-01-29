@@ -1,6 +1,6 @@
 <?php
 
-use Ptk\Helper\Text as Text;
+use Tsbc\Ptk\Helper\Text as Text;
 
 class TextTest extends \PHPUnit_Framework_TestCase
 {
