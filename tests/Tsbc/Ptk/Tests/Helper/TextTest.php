@@ -5,6 +5,22 @@ use Tsbc\Ptk\Helper\Text as Text;
 class TextTest extends \PHPUnit_Framework_TestCase
 {
     /**
+     * @dataProvider providerDecodeInteger
+     */
+    public function testDecodeIntiger($expected, $input, $message)
+    {
+        $this->assertEquals($expected, Text::decodeInteger($input), $message);
+    }
+
+    /**
+     * @dataProvider providerEncodeInteger
+     */
+    public function testEncodeIntiger($expected, $integer, $message)
+    {
+        $this->assertEquals($expected, Text::encodeInteger($integer), $message);
+    }
+
+    /**
      * @dataProvider providerGlueOrphans
      */
     public function testGlueOrphans($expected, $text, $message)
@@ -34,6 +50,36 @@ class TextTest extends \PHPUnit_Framework_TestCase
     public function testTruncate($expected, $text, $limit, $full_words, $trailing, $message)
     {
         $this->assertEquals($expected, Text::truncate($text, $limit, $full_words, $trailing), $message);
+    }
+
+    public function providerDecodeInteger()
+    {
+        $out = array(
+            array(26, 0, 'Testing integer decoding to text'),
+            array(1, 'b', 'Testing integer decoding to text'),
+            array(42, 'g', 'Testing integer decoding to text'),
+            array(654, 'K8', 'Testing integer decoding to text'),
+            array(3214, 'Pq', 'Testing integer decoding to text'),
+            array(76545, 'tuB', 'Testing integer decoding to text'),
+            array(924255, 'ds1v','Testing integer decoding to text')
+        );
+
+        return $out;
+    }
+
+    public function providerEncodeInteger()
+    {
+        $out = array(
+            array('A', 0, 'Testing integer encoding to text'),
+            array('b', 1, 'Testing integer encoding to text'),
+            array('bA', 62, 'Testing integer encoding to text'),
+            array('CE', 128, 'Testing integer encoding to text'),
+            array('Pq', 3214, 'Testing integer encoding to text'),
+            array('tuB', 76545, 'Testing integer encoding to text'),
+            array('ds1v', 924255, 'Testing integer encoding to text')
+        );
+
+        return $out;
     }
 
     public function providerGlueOrphans()
