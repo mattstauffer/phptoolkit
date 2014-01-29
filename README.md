@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/tomaszsobczak/phptoolkit.png?branch=master)](https://travis-ci.org/tomaszsobczak/phptoolkit)
+[![Build Status](https://travis-ci.org/tomaszsobczak/phptoolkit.png?branch=master)](https://travis-ci.org/tomaszsobczak/phptoolkit) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/913c6dcd-83d8-4a34-b086-5f1810c05525/mini.png)](https://insight.sensiolabs.com/projects/913c6dcd-83d8-4a34-b086-5f1810c05525)
